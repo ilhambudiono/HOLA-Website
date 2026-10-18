@@ -1,7 +1,6 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Jakarta');
-
 require_once '../config/koneksi.php';
 
 if (!function_exists('sanitize')) {
@@ -27,7 +26,7 @@ mysqli_query($koneksi, "CREATE TABLE IF NOT EXISTS pengaturan_toko (
     alamat_toko TEXT NOT NULL,
     no_wa VARCHAR(20) NOT NULL,
     pesan_struk TEXT NOT NULL
-)");
+)");    
 
 $q_check_empty = mysqli_query($koneksi, "SELECT id FROM pengaturan_toko WHERE id = 1");
 if (mysqli_num_rows($q_check_empty) == 0) {
